@@ -1,0 +1,500 @@
+body {
+    margin: 0;
+    /*It is a good idea to declare a body for cero because for
+    default the browser add some margin that can affect our layout*/
+}
+
+#myHeader {
+    display: flex;
+    /*display: flex always for the parent, never for the children*/
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: stretch;
+    width: 100%;
+    /*It is a good idea to add percetange in our container because that  way
+		we can create a responsive web design */
+    z-index: 5;
+    /*The z-index property specifies the stack order of an element.
+    An element with greater stack order is always in front of an
+    element with a lower stack order.
+    Note: z-index only works on positioned elements (position: absolute,
+    position: relative, position: fixed, or position: sticky).*/
+    position: fixed;
+    /*With position fixed I was able to make my nav move at the same
+    time I am scrolling down and up*/
+    background: white;
+    opacity: 0.9;
+    padding: 1rem;
+    z-index: 10;
+}
+
+.logo {
+    width: 55px;
+    /*In this case it is a good idea to add px */
+    /* It is good idea to set just width to the image becuase sometimes
+	 when we add height it streches and the image could look ugly. Also, when we use the
+	 property width automatically gives the height of the image*/
+}
+
+.bar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    list-style: none;
+    /* I used this property to remove the bullets of the list,
+	because I used <ul> element to create my nav*/
+}
+
+.bar>li {
+    border-right: 1px solid #F9D5D3;
+    /*I used border-right property in order to have a single line between,
+    elements in my navegation bar*/
+    position: relative;
+    /*position: relative places an element relative
+	 to its current position without changing the layout around it.
+	 Also, position: relative is always for the parent, so we use position absolute
+	 for the children. That way the children will take the size according to the size of
+	 their parent*/
+    line-height: 10px;
+    height: 36px;
+}
+
+.bar>li:last-child {
+    border: none;
+}
+
+.bar>li>a {
+    display: block;
+    padding: 15px;
+    margin-right: 5px;
+    height: 15px;
+    color: #000000;
+    font-family: 'Playfair Display SC', serif;
+    font-size: 15px;
+    text-decoration: none;
+    white-space: nowrap;
+    font-size: 16px;
+}
+
+.bar>li>a:hover {
+    color: #ECA4A6;
+    font-size: 20px;
+}
+
+.color-palette {
+    padding-top: 125px;
+}
+
+.color-palette div {
+    position: relative;
+    height: 10px;
+    top: 0px;
+}
+
+element.style {
+    background-color: #F9D5D3;
+}
+
+element.style {
+    background-color: #ECA4A6;
+}
+
+element.style {
+    background-color: #807F89;
+}
+
+element.style {
+    background-color: #99A89E;
+}
+
+element.style {
+    background-color: #BBC7BA;
+}
+
+element.style {
+    background-color: #D7DBD1;
+}
+
+element.style {
+    background-color: #F9D5D3;
+}
+
+.life {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    /*the posion relative help me to keep all the elemnts in the cointainer
+    in te same box, and proporcional resize so it looks good in smaller screen8*/
+    width: 100%;
+    height: 100%;
+    background: lightblue;
+    -webkit-animation: change 5s infinite;
+    box-sizing: content-box;
+}
+
+@-webkit-keyframes change {
+    0% {
+        background: red;
+    }
+    30% {
+        background: lightyellow;
+    }
+    100% {
+        background: lightblue;
+    }
+}
+
+@media(max-width:575.98px) {
+    .life {
+        display: flex;
+        padding-top: 2%;
+    }
+}
+
+.life>p {
+    font-size: 60px;
+    text-align: center;
+    padding-top: 5px;
+    color: red;
+    font-family: 'Mansalva', cursive;
+}
+
+@media(max-width:620px) {
+    .life>p {
+        font-size: 30px;
+        padding-top: 4%;
+    }
+}
+
+.life #change {
+    /*I needed to give an id to the picture of the face because
+    when I was adding the css to the tag img it was given the same size to all the
+    pictures of this section, so the id helped me to target just the face*/
+    width: 15%;
+    margin-left: 40%;
+    margin-right: 35%;
+    opacity: 1;
+    z-index: 5;
+}
+
+@media(max-width:620px) {
+    .life #change {
+        width: 20%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.david {
+    width: 5%;
+    position: absolute;
+    opacity: 0.8;
+    -webkit-animation: wind 5s infinite;
+    /* transform: translate(-43%, 146%); */
+    top: 2%;
+}
+
+@-webkit-keyframes wind {
+    0% {
+        left: 40%;
+    }
+    50% {
+        right: 90%;
+    }
+    100% {
+        left: 60%;
+    }
+}
+
+@media(max-width:620px) {
+    .david {
+        top: 13%;
+    }
+}
+
+.china {
+    width: 7%;
+    position: absolute;
+    opacity: 0.8;
+    -webkit-animation: china 8s infinite;
+    top: 25%;
+}
+
+@-webkit-keyframes china {
+    0% {
+        right: 70%;
+    }
+    50% {
+        right: 10%;
+        top: 300px;
+    }
+    100% {
+        right: 70%;
+    }
+}
+
+@media(max-width:620px) {
+    .china {
+        display: none;
+    }
+}
+
+.bowie {
+    width: 7%;
+    position: absolute;
+    opacity: 0.8;
+    -webkit-animation: sun 8s infinite;
+    /*we need to give a name to our animation in the,
+    element we want to affect, and if we are using more than one animation I should give 
+    a name to each animation because other ways, all the animation will act the same way*/
+    /* transform: translate(-43%, 146%); */
+    top: 25%;
+}
+
+
+/* Animations are made up of two key pieces: the animation properties 
+     and the keyframes. The keyframes will tell us what is happening, and the animation 
+     properties will define how it's happening. */
+
+@-webkit-keyframes sun {
+    0% {
+        left: 70%;
+    }
+    50% {
+        left: 10%;
+        top: 300px;
+    }
+    100% {
+        left: 70%;
+    }
+}
+
+@media(max-width:620px) {
+    .bowie {
+        display: none;
+    }
+}
+
+
+/* animation-name
+The name of your animation should match exactly the name of your keyframes. 
+It's what links your keyframes and your animation together.*/
+
+.man {
+    width: 7%;
+    position: absolute;
+    opacity: 0.8;
+    -webkit-animation: star 8s infinite;
+    /* transform: translate(-43%, 146%); */
+    top: 80%;
+}
+
+@-webkit-keyframes star {
+    0% {
+        right: 70%;
+    }
+    50% {
+        right: 10%;
+        top: 300px;
+        animation-play-state: paused;
+    }
+    100% {
+        right: 70%;
+    }
+}
+
+@media(max-width:620px) {
+    .man {
+        display: none;
+    }
+}
+
+.girl {
+    width: 7%;
+    position: absolute;
+    opacity: 0.8;
+    -webkit-animation: hello 8s infinite;
+    top: 80%;
+}
+
+@media(max-width:620px) {
+    .man {
+        display: none;
+    }
+}
+
+@-webkit-keyframes hello {
+    0% {
+        left: 70%;
+    }
+    50% {
+        left: 10%;
+        top: 300px;
+    }
+    100% {
+        left: 70%;
+    }
+}
+
+@media(max-width:620px) {
+    .girl {
+        display: none;
+    }
+}
+
+#title1 {
+    width: 100%;
+    margin-top: 4%;
+    color: black;
+    text-shadow: 2px 2px 2px #ECA4A6;
+    text-align: center;
+    font-family: 'Playfair Display SC', serif;
+}
+
+#title1 p {
+    padding-top: 2%;
+    letter-spacing: 3px;
+    font-size: 60px;
+    animation-duration: 4s;
+    animation-delay: 3s;
+    animation-iteration-count: 4;
+}
+
+@media(max-width:575.98px) {
+    #title1 p {
+        letter-spacing: 0px;
+        font-size: 25px;
+    }
+}
+
+#images {
+    display: flex;
+    /* The display property helped to create a container between the photos of
+	fade effect and bowie animaton*/
+    width: 100%;
+    margin-top: 5%;
+}
+
+#images img {
+    width: 30%;
+    position: absolute;
+    /*To be able to create the effect I want, (one photo on the top of
+		the other one, I need to add position absolute)*/
+    opacity: 1;
+    /*The opacity  property is important for the fade effect, 
+    and it has to be set in 1 */
+    left: 35%;
+    border: 6px solid #BBC7BA;
+    border-radius: 15px 50px 30px;
+    /*Three values - border-radius: 15px 50px 30px; (first value applies to top-left corner, 
+    second value applies to top-right and bottom-left corners,and third value applies 
+    to bottom-right corner)*/
+}
+
+#images img.top:hover {
+    opacity: 0;
+    /*The -moz-appearance CSS property is used in Gecko (Firefox) to display an element using 
+   platform-native styling based on the operating system's theme. The -webkit-appearance 
+   property is used by WebKit-based (e.g., Safari) and Blink-based (e.g., Chrome, Opera) 
+    browsers to achieve the same thing*/
+    -webkit-transition: opacity width 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+    /*The timing function dictates the speed of the transition over time. 
+    Should it start out really slow and then speed up, or evenly change 
+    throughout the duration? We can specify this using the transition-timing-function 
+    property.*/
+    /* ease-in-out means the animation will progress slower at the start and 
+    end than it will in the middle.*/
+}
+
+.end {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-top: 10px;
+    height: 100px;
+    margin-right: auto;
+    margin-left: auto;
+    background: #F9D5D3;
+    margin-top: 28%;
+    z-index: 10;
+}
+
+.description {
+    /*To create these tooltips*/
+    display: none;
+}
+
+a:hover+.description {
+    padding-top: 5px;
+    display: block;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.fa-instagram {
+    padding-left: 25px;
+    padding-right: 45px;
+    margin-top: 20%;
+    color: #807F89
+}
+
+.fa-instagram:hover {
+    color: purple;
+}
+
+.fa-envelope {
+    color: #807F89;
+    padding-left: 25px;
+    padding-right: 45px;
+    margin-top: 20%;
+}
+
+.fa-envelope:hover {
+    color: white;
+}
+
+.fa-youtube {
+    color: #807F89;
+    padding-left: 25px;
+    padding-right: 35px;
+    margin-top: 20%;
+}
+
+.fa-youtube:hover {
+    color: red;
+}
+
+.fa-facebook-square {
+    padding-left: 35px;
+    padding-right: 35px;
+    color: #807F89;
+    margin-top: 20%;
+}
+
+.fa-facebook-square:hover {
+    color: #1777f2;
+}
+
+.bottom {
+    text-align: center;
+    font-family: 'Playfair Display SC', serif;
+    font-size: 16px;
+}
+
+.bottom>a {
+    text-decoration: none;
+    color: black;
+}
+
+.bottom>a:hover {
+    font-size: 22px;
+    color: #99A89E;
+}

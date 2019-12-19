@@ -1,0 +1,139 @@
+body {
+    margin: 0;
+    /*It is a good idea to declare a body for cero because for
+    default the browser add some margin that can affect our layout*/
+}
+
+#myHeader {
+    display: flex;
+    /*display: flex always for the parent, never for the children*/
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: stretch;
+    width: 100%;
+    /*It is a good idea to add percetange in our container because that  way
+		we can create a responsive web design */
+    margin-bottom: 1%;
+    z-index: 5;
+    /*The z-index property specifies the stack order of an element.
+    An element with greater stack order is always in front of an
+    element with a lower stack order.
+    Note: z-index only works on positioned elements (position: absolute,
+    position: relative, position: fixed, or position: sticky).*/
+    position: fixed;
+    background: white;
+    padding: 1rem;
+}
+
+.logo {
+    width: 55px;
+    /*In this case it is a good idea to add px */
+    /* It is good idea to set just width to the image becuase sometimes
+	 when we add height it streches and the image could look ugly. Also, when we use the
+	 property width automatically gives the height of the image*/
+}
+
+.bar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    list-style: none;
+    /* I used this property to remove the bullets of the list,
+	because I used <ul> element to create my nav*/
+}
+
+.bar>li {
+    border-right: 1px solid #F9D5D3;
+    /*I used border-right property in order to have a single line between,
+    elements in my navegation bar*/
+    position: relative;
+    /*position: relative places an element relative
+	 to its current position without changing the layout around it.
+	 Also, position: relative is always for the parent, so we use position absolute
+	 for the children. That way the children will take the size according to the size of
+	 their parent*/
+    line-height: 10px;
+    height: 36px;
+}
+
+.bar>li:last-child {
+    border: none;
+}
+
+.bar>li>a {
+    display: block;
+    padding: 15px;
+    margin-right: 5px;
+    height: 15px;
+    color: #000000;
+    font-family: 'Playfair Display SC', serif;
+    font-size: 15px;
+    text-decoration: none;
+    white-space: nowrap;
+    font-size: 16px;
+}
+
+.bar>li>a:hover {
+    color: pink;
+    font-size: 20px;
+}
+
+.color-palette {
+    padding-top: 125px;
+}
+
+.color-palette div {
+    position: relative;
+    height: 10px;
+    top: 0px;
+}
+
+element.style {
+    background-color: #F9D5D3;
+}
+
+element.style {
+    background-color: #ECA4A6;
+}
+
+element.style {
+    background-color: #807F89;
+}
+
+element.style {
+    background-color: #99A89E;
+}
+
+element.style {
+    background-color: #BBC7BA;
+}
+
+element.style {
+    background-color: #D7DBD1;
+}
+
+element.style {
+    background-color: #F9D5D3;
+}
+
+#title h2 {
+    letter-spacing: 3px;
+    margin-top: 4%;
+    color: black;
+    text-shadow: 2px 2px 2px #ECA4A6;
+    font-size: 50px;
+    text-align: center;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-iteration-count: 1;
+}
+
+@media(max-width:620px) {
+    #title>h2 {
+        font-size: 20px;
+        letter-spacing: 0px;
+    }
+}
